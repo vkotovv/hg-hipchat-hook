@@ -9,7 +9,6 @@ Clone this repository somewhere in your GIT repository host server.
 
 ```sh
 hg clone git://github.com/vkotovv/hg-hipchat-hook.git
-
 ```
 
 Clone [hipchat-cli](https://github.com/hipchat/hipchat-cli) somewhere in your Mercurial repository host server.
@@ -34,7 +33,7 @@ And you're done!
 
 ## Additional integrations
 
-For Rhodecode and Redmine integrations (optional), add the following configuration to the `hipchat_changegroup.sh` hook file:
+For [Rhodecode](http://rhodecode.org) and [Redmine](http://redmine.org) integrations, add the following configuration to the `hipchat_changegroup.sh` hook file:
 ```sh
 RHODECODE="rhodecode.example.com"
 REDMINE="redmine.example.com"

@@ -1,6 +1,7 @@
 # Mercurial HipChat Hook
 
 A simple Mercurial `changegroup` hook script for notifying a room in HipChat.
+Based on [git-hipchat-hook](https://github.com/eirc/git-hipchat-hook) by *eirc*.
 
 ## Installation
 
@@ -21,7 +22,7 @@ Go to the `.hg/hgrc` in a repository you want to setup the hooks for and add a `
 ```sh
 #!/bin/sh
 
-HIPCHAT_SCRIPT="/path/to/hipchat/room/message"
+HIPCHAT_SCRIPT="/path/to/hipchat-cli"
 HIPCHAT_ROOM="HipChat room name"
 HIPCHAT_TOKEN="1234567890"
 HIPCHAT_FROM="HG"

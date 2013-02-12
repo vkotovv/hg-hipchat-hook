@@ -5,7 +5,7 @@ Based on [git-hipchat-hook](https://github.com/eirc/git-hipchat-hook) by *eirc*.
 
 ## Installation
 
-Clone this repository somewhere in your GIT repository host server.
+Clone this repository somewhere in your Mercurial repository host server.
 
 ```sh
 hg clone git://github.com/vkotovv/hg-hipchat-hook.git

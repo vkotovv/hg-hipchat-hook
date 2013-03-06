@@ -7,23 +7,27 @@ HIPCHAT_COLOR="yellow"
 
 USER=`$HG_EXEC log -l 1 -r $HG_NODE --template="{author|person}"`
 
-# Setup rhodecode links
+# Setup rhodecode, redmine and trac links
+REPO_LINK=$REPO
+TEMPLATE_PREFIX="- {desc}"
+TEMPLATE_CHANGE="({node|short})"
+TEMPLATE_BRANCH="[ {branch} {bookmarks}]"
 if [ -n "$RHODECODE" ]
 then
   REPO_LINK="<a href=\"http://$RHODECODE/$REPO/summary\">$REPO</a>"
-else
-  REPO_LINK=$REPO
+  TEMPLATE_CHANGE="(<a href=\"http://$RHODECODE/$REPO/changeset/{node|short}\">{node|short}</a>)"
+elif [ -n "$TRAC" ]
+then
+  REPO_LINK="<a href=\"$TRAC/browser/$REPO\">$REPO</a>"
+  TEMPLATE_CHANGE="(<a href=\"$TRAC/changeset/{node|short}/$REPO\">{node|short}</a>)"
 fi
 
 # Construct message
 TITLE="$USER pushed some changesets to $REPO_LINK:"
-if [ -n "$RHODECODE" ]
-  then
-LOG=`$HG_EXEC log -r $HG_NODE:tip --template="- {desc} (<a href=\"http://$RHODECODE/$REPO/changeset/{node|short}\">{node|short}</a>) [{branch}]\n"`
-  else
-LOG=`$HG_EXEC log -r $HG_NODE:tip --template="- {desc} ({node|short}) [{branch}]\n"`
-fi
+LOG=`$HG_EXEC log -r $HG_NODE:tip --template="$TEMPLATE_PREFIX $TEMPLATE_CHANGE $TEMPLATE_BRANCH\n"`
 
+# manipulate redmine issue links if available
+# TODO: the same for trac
 if [ -n "$REDMINE" ]
   then
 LOG=`echo "$LOG" | sed "s/#\([0-9]*\)/#<a href=\"http:\/\/$REDMINE\/issues\/\1\">\1<\/a>/g"`

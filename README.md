@@ -37,4 +37,5 @@ For [Rhodecode](http://rhodecode.org) and [Redmine](http://redmine.org) integrat
 ```sh
 RHODECODE="rhodecode.example.com"
 REDMINE="redmine.example.com"
+TRAC="https://trac.example.com/project"
 ```

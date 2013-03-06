@@ -1,6 +1,6 @@
 # Mercurial HipChat Hook
 
-A simple Mercurial `changegroup` hook script for notifying a room in HipChat.
+A simple Mercurial [changegroup](http://www.selenic.com/mercurial/hgrc.5.html#hooks) hook script for notifying a room in HipChat.
 Based on [git-hipchat-hook](https://github.com/eirc/git-hipchat-hook) by *eirc*.
 
 ## Installation
@@ -33,7 +33,7 @@ And you're done!
 
 ## Additional integrations
 
-For [Rhodecode](http://rhodecode.org), [Redmine](http://redmine.org), and [Trac](http://trac.edgewall.org/) integrations, add the following configuration to the `hipchat_changegroup.sh` hook file:
+For [Rhodecode](http://rhodecode.org), [Redmine](http://redmine.org), and [Trac](http://trac.edgewall.org/) integrations, edit the following configuration in the `hipchat_changegroup.sh` hook file:
 ```sh
 RHODECODE="http://rhodecode.example.com"
 REDMINE="http://redmine.example.com"

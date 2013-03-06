@@ -20,7 +20,6 @@ elif [ -n "$TRAC" ]
 then
   REPO_LINK="<a href=\"$TRAC/browser/$REPO\">$REPO</a>"
   TEMPLATE_CHANGE="(<a href=\"$TRAC/changeset/{node|short}/$REPO\">{node|short}</a>)"
-  TEMPLATE_BRANCH="[{branch}:{bookmark|nonempty}]"
 fi
 
 # Construct message

@@ -5,7 +5,8 @@ HIPCHAT_ROOM="HipChat room name"
 HIPCHAT_TOKEN="1234567890"
 HIPCHAT_FROM="HG"
 
-REDMINE="redmine.example.com"
-RHODECODE="rhodecode.example.com"
+REDMINE="http://redmine.example.com"
+RHODECODE="http://rhodecode.example.com"
+TRAC="https://trac.example.com/project"
 
 . /path/to/hipchat.sh

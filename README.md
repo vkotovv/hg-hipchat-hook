@@ -22,7 +22,7 @@ Go to the `.hg/hgrc` in a repository you want to setup the hooks for and add a `
 #!/bin/sh
 
 HIPCHAT_SCRIPT="/path/to/hipchat-cli"
-HIPCHAT_ROOM="HipChat room name"
+HIPCHAT_ROOM="<HipChat room id>"
 HIPCHAT_TOKEN="1234567890"
 HIPCHAT_FROM="HG"
 

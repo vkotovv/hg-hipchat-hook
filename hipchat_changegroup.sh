@@ -1,7 +1,7 @@
 #!/bin/sh
 
 HIPCHAT_SCRIPT="/path/to/hipchat-cli"
-HIPCHAT_ROOM="HipChat room name"
+HIPCHAT_ROOM="55512"
 HIPCHAT_TOKEN="1234567890"
 HIPCHAT_FROM="HG"
 

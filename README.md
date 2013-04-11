@@ -8,7 +8,7 @@ Based on [git-hipchat-hook](https://github.com/eirc/git-hipchat-hook) by *eirc*.
 Clone this repository somewhere in your Mercurial repository host server.
 
 ```sh
-hg clone git://github.com/vkotovv/hg-hipchat-hook.git
+git clone git://github.com/vkotovv/hg-hipchat-hook.git
 ```
 
 Clone [hipchat-cli](https://github.com/hipchat/hipchat-cli) somewhere in your Mercurial repository host server.

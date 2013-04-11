@@ -32,6 +32,9 @@ if [ -n "$REDMINE" ]
 then
   # Using ~ as a sed separator to prevent failing on http:// slashes (see http://ubuntuforums.org/showthread.php?t=1270429)
   LOG=`echo "$LOG" | sed "s~#\([0-9]*\)~<a href=\"$REDMINE\/issues\/\1\">#\1<\/a>~g"`
+elif [ -n "$JIRA" ]
+then
+  LOG=`echo -e "$LOG" | sed "s/\([A-Z]\{2,\}\-[0-9]\{1,\}\)/<a href=\"http:\/\/$JIRA\/browse\/\1\">\1<\/a>/g"`
 fi
 
 MSG="$TITLE\n$LOG"

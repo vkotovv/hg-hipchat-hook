@@ -44,3 +44,4 @@ TRAC="https://trac.example.com/project"
 
 Many thanks to the contributors:
 * [Hatem Nassrat](https://github.com/pykler)
+* [Ben Tsai](https://github.com/bentsai)

@@ -33,11 +33,12 @@ And you're done!
 
 ## Additional integrations
 
-For [Rhodecode](http://rhodecode.org), [Redmine](http://redmine.org), and [Trac](http://trac.edgewall.org/) integrations, edit the following configuration in the `hipchat_changegroup.sh` hook file:
+For [Rhodecode](http://rhodecode.org), [Redmine](http://redmine.org), and [Trac](http://trac.edgewall.org/) and [JIRA](http://www.atlassian.com/software/jira/overview) integrations, edit the following configuration in the `hipchat_changegroup.sh` hook file:
 ```sh
 RHODECODE="http://rhodecode.example.com"
 REDMINE="http://redmine.example.com"
 TRAC="https://trac.example.com/project"
+JIRA="http://jira.example.com"
 ```
 
 ## Contributors

@@ -8,5 +8,6 @@ HIPCHAT_FROM="HG"
 # REDMINE="http://redmine.example.com"
 # RHODECODE="http://rhodecode.example.com"
 # TRAC="https://trac.example.com/project"
+# JIRA="http://jira.example.com"
 
 . /path/to/hipchat.sh

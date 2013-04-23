@@ -14,8 +14,8 @@ TEMPLATE_CHANGE="({node|short})"
 TEMPLATE_BRANCH="[{branch}]"
 if [ -n "$RHODECODE" ]
 then
-  REPO_LINK="<a href=\"$RHODECODE/$REPO/summary\">$REPO</a>"
-  TEMPLATE_CHANGE="(<a href=\"$RHODECODE/$REPO/changeset/{node|short}\">{node|short}</a>)"
+  REPO_LINK="<a href=\"$RHODECODE/$REPO\">$REPO</a>"
+  TEMPLATE_CHANGE="(<a href=\"$RHODECODE/$REPO/changeset/{node}\">{node|short}</a>)"
 elif [ -n "$TRAC" ]
 then
   REPO_LINK="<a href=\"$TRAC/browser/$REPO\">$REPO</a>"

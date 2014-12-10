@@ -16,24 +16,33 @@ Clone [hipchat-cli](https://github.com/hipchat/hipchat-cli) somewhere in your Me
 ```sh
 git clone git://github.com/hipchat/hipchat-cli.git
 ```
-Go to the `.hg/hgrc` in a repository you want to setup the hooks for and add a `changegroup` hook based on `hipchat_changegroup.sh` and make sure it is executable:
-
+Create configuration file named `/etc/default/hipchat_hg`. It can be shared between all your repos with hooks:
 ```sh
-#!/bin/sh
-
 HIPCHAT_SCRIPT="/path/to/hipchat-cli"
-HIPCHAT_ROOM="HipChat room name or ID"
 HIPCHAT_TOKEN="1234567890"
 HIPCHAT_FROM="HG"
 
-. /path/to/hipchat.sh
+# REDMINE="http://redmine.example.com"
+# RHODECODE="http://rhodecode.example.com"
+# TRAC="https://trac.example.com/project"
+# JIRA="http://jira.example.com"
+```
+Go to the `.hg/hgrc` in a repository you want to setup the hooks for and add a `changegroup` hook based on `hipchat_changegroup.sh` and make sure it is executable. You should fill project-specific options here:
+
+```sh
+HIPCHAT_ROOM="HipChat room name or ID"
+
+# path to target repo dir
+PROJECT_DIR="/path/to/project"
+# path to hipchat.sh from https://github.com/vkotovv/hg-hipchat-hook repo
+HIPCHAT_SH_SCRIPT="/path/to/hipchat.sh"
 ```
 
 And you're done!
 
 ## Additional integrations
 
-For [Rhodecode](http://rhodecode.org), [Redmine](http://redmine.org), [Trac](http://trac.edgewall.org/) and [JIRA](http://www.atlassian.com/software/jira/overview) integrations, edit the following configuration in the `hipchat_changegroup.sh` hook file:
+For [Rhodecode](http://rhodecode.org), [Redmine](http://redmine.org), [Trac](http://trac.edgewall.org/) and [JIRA](http://www.atlassian.com/software/jira/overview) integrations, edit the following configuration in the `/etc/default/hipchat_hg` config file:
 ```sh
 RHODECODE="http://rhodecode.example.com"
 REDMINE="http://redmine.example.com"

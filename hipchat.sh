@@ -2,9 +2,10 @@
 
 # Find out basic variables
 HG_EXEC=`which hg`
-REPO=`basename $PWD`
+REPO=`basename $1`
 HIPCHAT_COLOR="yellow"
 
+cd $1
 USER=`$HG_EXEC log -l 1 -r $HG_NODE --template="{author|person}"`
 
 # Setup rhodecode, redmine and trac links

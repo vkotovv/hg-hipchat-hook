@@ -1,13 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
-HIPCHAT_SCRIPT="/path/to/hipchat-cli"
+test -f /etc/default/hipchat_hg && . /etc/default/hipchat_hg
+
 HIPCHAT_ROOM="HipChat room name or ID"
-HIPCHAT_TOKEN="1234567890"
-HIPCHAT_FROM="HG"
 
-# REDMINE="http://redmine.example.com"
-# RHODECODE="http://rhodecode.example.com"
-# TRAC="https://trac.example.com/project"
-# JIRA="http://jira.example.com"
-
-. /path/to/hipchat.sh
+# path to target repo dir
+PROJECT_DIR="/path/to/project"
+# path to hipchat.sh from https://github.com/vkotovv/hg-hipchat-hook repo
+HIPCHAT_SH_SCRIPT="/path/to/hipchat.sh"
+. $HIPCHAT_SH_SCRIPT $PROJECT_DIR

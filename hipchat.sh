@@ -32,14 +32,14 @@ LOG=`$HG_EXEC log -r $HG_NODE:tip --template="$TEMPLATE_PREFIX $TEMPLATE_CHANGE 
 if [ -n "$REDMINE" ]
 then
   # Using ~ as a sed separator to prevent failing on http:// slashes (see http://ubuntuforums.org/showthread.php?t=1270429)
-  LOG=`echo "$LOG" | sed "s~#\([0-9]*\)~<a href=\"$REDMINE\/issues\/\1\">#\1<\/a>~g"`
+  LOG=`echo -e "$LOG" | sed "s~#\([0-9]*\)~<a href=\"$REDMINE\/issues\/\1\">#\1<\/a>~g"`
 elif [ -n "$JIRA" ]
 then
-  LOG=`echo "$LOG" | sed "s~\([A-Z]\{2,\}\-[0-9]\{1,\}\)~<a href=\"$JIRA\/browse\/\1\">\1<\/a>~g"`
+  LOG=`echo -e "$LOG" | sed "s~\([A-Z]\{2,\}\-[0-9]\{1,\}\)~<a href=\"$JIRA\/browse\/\1\">\1<\/a>~g"`
 fi
 
 MSG="$TITLE\n$LOG"
 
 # Send it to HipChat
-echo "$MSG" | $HIPCHAT_SCRIPT -n -c "$HIPCHAT_COLOR" -t "$HIPCHAT_TOKEN" -r "$HIPCHAT_ROOM" -f "$HIPCHAT_FROM" > /dev/null
+echo -e "$MSG" | $HIPCHAT_SCRIPT -n -c "$HIPCHAT_COLOR" -t "$HIPCHAT_TOKEN" -r "$HIPCHAT_ROOM" -f "$HIPCHAT_FROM" > /dev/null
 
